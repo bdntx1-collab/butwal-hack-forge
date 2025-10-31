@@ -19,41 +19,43 @@ const Navbar = () => {
     { label: "Schedule", href: "#schedule" },
     { label: "Challenges", href: "#challenges" },
     { label: "Sponsors", href: "#sponsors" },
-    { label: "Community", href: "#community" },
     { label: "FAQ", href: "#faq" },
   ];
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md shadow-sm" : "bg-transparent"
+        isScrolled ? "bg-background border-b-4 border-foreground shadow-[0_4px_0px_0px_rgba(0,0,0,0.3)]" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <a href="#" className="text-xl font-heading font-bold text-primary">
-            HACK DAY
+          <a href="#" className="text-2xl font-heading font-black text-primary transform hover:rotate-2 transition-transform">
+            HACK DAY 🚀
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                className="text-sm font-bold text-foreground hover:text-primary transition-colors uppercase tracking-wide hover:scale-105 transform"
               >
                 {link.label}
               </a>
             ))}
-            <Button size="sm" className="shadow-md hover:shadow-lg transition-all">
+            <Button 
+              size="sm" 
+              className="transform -rotate-1 hover:rotate-0"
+            >
               Register Now
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            className="md:hidden p-2 border-2 border-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -62,13 +64,13 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="md:hidden py-4 border-t-4 border-foreground bg-background">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                  className="text-sm font-bold text-foreground hover:text-primary transition-colors uppercase tracking-wide py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
