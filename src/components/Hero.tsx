@@ -1,14 +1,44 @@
 import { Button } from "@/components/ui/button";
 import { Plane, Code2, Zap, Trophy } from "lucide-react";
 import logo from "@/assets/hack-day-logo.png";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const Hero = () => {
-  const [planeClicked, setPlaneClicked] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [position, setPosition] = useState({ x: 50, y: window.innerHeight - 150 });
+  const [showLogo, setShowLogo] = useState(false);
+  const planeRef = useRef<HTMLDivElement>(null);
 
-  const handlePlaneClick = () => {
-    setPlaneClicked(true);
-    setTimeout(() => setPlaneClicked(false), 3000);
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (isDragging) {
+        setPosition({ x: e.clientX - 64, y: e.clientY - 64 });
+        
+        // Show logo when plane reaches right side
+        if (e.clientX > window.innerWidth - 200) {
+          setShowLogo(true);
+        }
+      }
+    };
+
+    const handleMouseUp = () => {
+      setIsDragging(false);
+    };
+
+    if (isDragging) {
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+    }
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [isDragging]);
+
+  const handlePlaneMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsDragging(true);
   };
 
   return (
@@ -30,21 +60,25 @@ const Hero = () => {
         <Trophy className="w-14 h-14 text-primary/25 rotate-6" />
       </div>
 
-      {/* Interactive Flying Plane - Flies across entire screen */}
+      {/* Interactive Draggable Plane - Starts from bottom left */}
       <div 
-        className={`fixed top-1/4 -left-32 z-50 cursor-pointer transition-all duration-1000 ${
-          planeClicked ? 'animate-[fly-across_3s_ease-in-out]' : 'animate-[fly-full-screen_15s_ease-in-out_infinite]'
-        }`}
-        onClick={handlePlaneClick}
+        ref={planeRef}
+        className={`fixed z-50 cursor-move ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+        style={{
+          left: `${position.x}px`,
+          top: `${position.y}px`,
+          transition: isDragging ? 'none' : 'all 0.3s ease-out'
+        }}
+        onMouseDown={handlePlaneMouseDown}
       >
-        <Plane className="w-24 h-24 md:w-32 md:h-32 text-primary opacity-80 hover:opacity-100 hover:scale-110 transition-all -rotate-12" />
+        <Plane className={`w-24 h-24 md:w-32 md:h-32 text-primary hover:opacity-100 transition-all ${isDragging ? 'scale-125 opacity-100' : 'opacity-80 scale-100'} -rotate-12`} />
       </div>
 
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="text-center max-w-5xl mx-auto">
 
-          {/* Logo with Tilt */}
-          <div className="mb-8 flex justify-center animate-slide-in-left">
+          {/* Logo with Tilt - Pops up when plane launches */}
+          <div className={`mb-8 flex justify-center transition-all duration-700 ${showLogo ? 'animate-[scale-in_0.5s_ease-out] opacity-100' : 'opacity-0 scale-50'}`}>
             <img
               src={logo}
               alt="Hack Day Butwal 1.0"

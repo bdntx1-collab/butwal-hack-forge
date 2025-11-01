@@ -91,11 +91,8 @@ const Workshops = () => {
           </div>
 
           <div className="flex justify-center">
-            <div className="bg-card border-4 border-foreground p-8 transform -rotate-2 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] max-w-sm">
-              <div className="w-32 h-32 bg-primary/20 border-4 border-foreground mx-auto mb-6 transform rotate-3" />
-              <h4 className="text-2xl font-bold text-foreground mb-2 text-center">Berand Gautam</h4>
-              <p className="text-primary font-semibold text-center mb-2">Organizer</p>
-              <p className="text-muted-foreground text-center">Leading Hack Day Butwal 1.0</p>
+            <div className="bg-card border-4 border-foreground p-8 transform -rotate-2 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-sm">
+              <p className="text-xl text-muted-foreground text-center">Team members will be revealed soon!</p>
             </div>
           </div>
         </div>
