@@ -76,12 +76,32 @@ export default {
           from: { height: "var(--radix-accordion-content-height)", opacity: "1" },
           to: { height: "0", opacity: "0" },
         },
-        fly: {
-          "0%, 100%": {
+        "fly-full-screen": {
+          "0%": {
             transform: "translateX(0) translateY(0) rotate(-12deg)",
           },
+          "25%": {
+            transform: "translateX(50vw) translateY(-20vh) rotate(-8deg)",
+          },
           "50%": {
-            transform: "translateX(100px) translateY(-50px) rotate(-5deg)",
+            transform: "translateX(100vw) translateY(-10vh) rotate(-15deg)",
+          },
+          "75%": {
+            transform: "translateX(50vw) translateY(-30vh) rotate(-5deg)",
+          },
+          "100%": {
+            transform: "translateX(0) translateY(0) rotate(-12deg)",
+          },
+        },
+        "fly-across": {
+          "0%": {
+            transform: "translateX(0) translateY(0) rotate(-12deg) scale(1)",
+          },
+          "50%": {
+            transform: "translateX(110vw) translateY(-20vh) rotate(0deg) scale(1.3)",
+          },
+          "100%": {
+            transform: "translateX(0) translateY(0) rotate(-12deg) scale(1)",
           },
         },
         "fade-in": {

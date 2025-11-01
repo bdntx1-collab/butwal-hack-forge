@@ -1,8 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Plane, Code2, Zap, Trophy } from "lucide-react";
 import logo from "@/assets/hack-day-logo.png";
+import { useState } from "react";
 
 const Hero = () => {
+  const [planeClicked, setPlaneClicked] = useState(false);
+
+  const handlePlaneClick = () => {
+    setPlaneClicked(true);
+    setTimeout(() => setPlaneClicked(false), 3000);
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Chaotic Decorative Elements */}
@@ -22,12 +30,18 @@ const Hero = () => {
         <Trophy className="w-14 h-14 text-primary/25 rotate-6" />
       </div>
 
+      {/* Interactive Flying Plane - Flies across entire screen */}
+      <div 
+        className={`fixed top-1/4 -left-32 z-50 cursor-pointer transition-all duration-1000 ${
+          planeClicked ? 'animate-[fly-across_3s_ease-in-out]' : 'animate-[fly-full-screen_15s_ease-in-out_infinite]'
+        }`}
+        onClick={handlePlaneClick}
+      >
+        <Plane className="w-24 h-24 md:w-32 md:h-32 text-primary opacity-80 hover:opacity-100 hover:scale-110 transition-all -rotate-12" />
+      </div>
+
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="text-center max-w-5xl mx-auto">
-          {/* Flying Plane Animation */}
-          <div className="absolute -top-10 right-5 md:right-20 animate-[fly_8s_ease-in-out_infinite]">
-            <Plane className="w-20 h-20 md:w-24 md:h-24 text-primary opacity-60 -rotate-12" />
-          </div>
 
           {/* Logo with Tilt */}
           <div className="mb-8 flex justify-center animate-slide-in-left">
