@@ -76,6 +76,14 @@ export default {
           from: { height: "var(--radix-accordion-content-height)", opacity: "1" },
           to: { height: "0", opacity: "0" },
         },
+        fly: {
+          "0%, 100%": {
+            transform: "translateX(0) translateY(0) rotate(-12deg)",
+          },
+          "50%": {
+            transform: "translateX(100px) translateY(-50px) rotate(-5deg)",
+          },
+        },
         "fade-in": {
           "0%": { opacity: "0", transform: "translateY(10px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },

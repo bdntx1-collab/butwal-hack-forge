@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Rocket, Code2, Zap, Trophy } from "lucide-react";
+import { Plane, Code2, Zap, Trophy } from "lucide-react";
 import logo from "@/assets/hack-day-logo.png";
 
 const Hero = () => {
@@ -24,9 +24,9 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="text-center max-w-5xl mx-auto">
-          {/* Floating Rocket */}
-          <div className="absolute -top-10 right-5 md:right-20 animate-float">
-            <Rocket className="w-20 h-20 md:w-24 md:h-24 text-primary opacity-40 rotate-12" />
+          {/* Flying Plane Animation */}
+          <div className="absolute -top-10 right-5 md:right-20 animate-[fly_8s_ease-in-out_infinite]">
+            <Plane className="w-20 h-20 md:w-24 md:h-24 text-primary opacity-60 -rotate-12" />
           </div>
 
           {/* Logo with Tilt */}
@@ -49,11 +49,11 @@ const Hero = () => {
           </div>
 
           <p className="text-2xl md:text-4xl font-bold text-primary mb-4 transform rotate-1 animate-slide-in-right">
-            Learn. Build. Launch.
+            Ready to make your plane fly?
           </p>
 
           <p className="text-base md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-            Join Nepal's brightest student innovators for 3 days of hacking, learning, and building impactful projects.
+            Let's do it in the hackathon! Join Nepal's brightest student innovators for 12 hours of hacking, learning, and building impactful projects.
           </p>
 
           {/* CTA Buttons - Non-uniform */}
@@ -76,19 +76,19 @@ const Hero = () => {
           {/* Event Info - Tilted Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="bg-card border-4 border-foreground p-6 transform -rotate-2 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1">
-              <p className="text-5xl font-black text-primary mb-3 font-heading">3</p>
-              <p className="text-xl font-bold text-foreground">Days</p>
+              <p className="text-5xl font-black text-primary mb-3 font-heading">12</p>
+              <p className="text-xl font-bold text-foreground">Hours</p>
               <p className="text-sm text-muted-foreground mt-1">Of Innovation</p>
             </div>
             <div className="bg-card border-4 border-foreground p-6 transform rotate-1 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1">
-              <p className="text-5xl font-black text-primary mb-3 font-heading">100+</p>
+              <p className="text-5xl font-black text-primary mb-3 font-heading">48+</p>
               <p className="text-xl font-bold text-foreground">Hackers</p>
               <p className="text-sm text-muted-foreground mt-1">Participants</p>
             </div>
             <div className="bg-card border-4 border-foreground p-6 transform -rotate-1 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1">
-              <p className="text-5xl font-black text-primary mb-3 font-heading">₹50K+</p>
-              <p className="text-xl font-bold text-foreground">Prizes</p>
-              <p className="text-sm text-muted-foreground mt-1">In Rewards</p>
+              <p className="text-5xl font-black text-primary mb-3 font-heading">🎁</p>
+              <p className="text-xl font-bold text-foreground">E-gadgets</p>
+              <p className="text-sm text-muted-foreground mt-1">To be revealed soon</p>
             </div>
           </div>
         </div>

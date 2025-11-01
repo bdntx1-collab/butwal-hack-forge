@@ -50,31 +50,41 @@ const Challenges = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-5xl mx-auto">
-          {challenges.map((challenge, index) => {
-            const Icon = challenge.icon;
-            return (
-              <Card
-                key={index}
-                className={`p-8 text-center hover:rotate-0 transition-all border-4 border-foreground bg-card shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 ${challenge.rotate}`}
-              >
-                <div className="w-20 h-20 mx-auto mb-6 bg-primary border-4 border-foreground flex items-center justify-center transform -rotate-6">
-                  <Icon className="w-10 h-10 text-primary-foreground" />
-                </div>
-                <h3 className="text-2xl font-black text-foreground mb-3 font-heading">
-                  {challenge.title}
-                </h3>
-                <p className="text-muted-foreground text-base font-medium">
-                  {challenge.description}
-                </p>
-              </Card>
-            );
-          })}
+        <div className="text-center bg-accent/10 border-4 border-foreground p-8 transform rotate-1 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-3xl mx-auto mb-16">
+          <p className="text-3xl font-black text-primary mb-4 font-heading">
+            Theme Will Be Revealed Soon! 🎯
+          </p>
+          <p className="text-lg text-muted-foreground">
+            Get ready to build something amazing. Use Google Gemini API and other cutting-edge tools!
+          </p>
         </div>
 
-        <div className="text-center bg-primary/10 p-10 border-4 border-foreground max-w-4xl mx-auto transform rotate-1 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-          <p className="text-xl text-foreground font-bold leading-relaxed">
-            🏆 Winners receive certificates, exclusive Hack Day swag, and recognition from MLH partners! 🎉
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="bg-card border-4 border-foreground p-8 transform -rotate-2 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
+            <div className="text-6xl mb-4">🥇</div>
+            <p className="text-3xl font-black text-primary mb-2 font-heading">1st Place</p>
+            <p className="text-lg text-muted-foreground">Certificate + E-gadgets + Prize Money</p>
+          </div>
+
+          <div className="bg-card border-4 border-foreground p-8 transform rotate-1 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
+            <div className="text-6xl mb-4">🥈</div>
+            <p className="text-3xl font-black text-primary mb-2 font-heading">2nd Place</p>
+            <p className="text-lg text-muted-foreground">Certificate + E-gadgets + Prize Money</p>
+          </div>
+
+          <div className="bg-card border-4 border-foreground p-8 transform -rotate-1 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
+            <div className="text-6xl mb-4">🥉</div>
+            <p className="text-3xl font-black text-primary mb-2 font-heading">3rd Place</p>
+            <p className="text-lg text-muted-foreground">Certificate + E-gadgets + Prize Money</p>
+          </div>
+        </div>
+
+        <div className="text-center bg-card border-4 border-foreground p-8 transform rotate-1 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-3xl mx-auto">
+          <p className="text-2xl font-bold text-foreground mb-4">
+            All winners will receive certificates and exclusive Hack Day swag! 🏆
+          </p>
+          <p className="text-lg text-muted-foreground">
+            Prize money details will be announced soon!
           </p>
         </div>
       </div>

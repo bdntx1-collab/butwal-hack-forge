@@ -4,33 +4,26 @@ import { BookOpen, Lightbulb, Presentation, Users } from "lucide-react";
 const Workshops = () => {
   const workshops = [
     {
-      title: "Intro to Hackathons",
-      icon: BookOpen,
-      time: "Day 2, 9:00 AM",
-      description: "First time at a hackathon? Learn the basics and how to make the most of your experience",
+      title: "Pitch Like a Pro",
+      icon: Presentation,
+      time: "To be announced",
+      description: "Learn how to present your project effectively and impress the judges",
       rotate: "-rotate-2"
     },
     {
-      title: "Rapid Prototyping with APIs",
+      title: "Building and Deploying Hackathon Projects",
       icon: Lightbulb,
-      time: "Day 2, 1:00 PM",
-      description: "Build faster by leveraging powerful APIs and modern development tools",
+      time: "To be announced",
+      description: "Build faster and deploy your hackathon projects with modern tools",
       rotate: "rotate-1"
     },
     {
-      title: "Pitch Like a Pro",
-      icon: Presentation,
-      time: "Day 3, 10:00 AM",
-      description: "Learn how to present your project effectively and impress the judges",
+      title: "Building and Deploying Websites",
+      icon: BookOpen,
+      time: "To be announced",
+      description: "Learn how to build and deploy websites quickly and efficiently",
       rotate: "-rotate-1"
     },
-  ];
-
-  const mentors = [
-    { name: "Rajesh Kumar", role: "Full Stack Dev", skills: ["React", "Node.js"], color: "primary" },
-    { name: "Priya Sharma", role: "ML Engineer", skills: ["Python", "TensorFlow"], color: "accent" },
-    { name: "Amit Patel", role: "Hardware Pro", skills: ["IoT", "Arduino"], color: "primary" },
-    { name: "Sarah Singh", role: "UX Designer", skills: ["Figma", "Design"], color: "accent" },
   ];
 
   return (
@@ -51,6 +44,15 @@ const Workshops = () => {
           </div>
           <p className="text-lg md:text-xl text-muted-foreground font-medium">
             Learn from experts and get guidance throughout the event
+          </p>
+        </div>
+
+        <div className="text-center bg-accent/10 border-4 border-foreground p-8 transform -rotate-1 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-3xl mx-auto mb-16">
+          <p className="text-3xl font-black text-primary mb-4 font-heading">
+            Workshops Coming Soon! 🚀
+          </p>
+          <p className="text-lg text-muted-foreground">
+            Stay tuned for exciting hands-on workshops to level up your skills!
           </p>
         </div>
 
@@ -77,45 +79,24 @@ const Workshops = () => {
           ))}
         </div>
 
-        {/* Mentors */}
-        <div className="max-w-5xl mx-auto">
-          <div className="relative inline-block mb-12">
-            <h3 className="text-3xl md:text-5xl font-black text-foreground font-heading transform rotate-1">
-              Meet Our Mentors 👋
-            </h3>
-            <div className="absolute -bottom-2 left-0 w-32 h-1 bg-primary" />
+        {/* Our Team Section */}
+        <div className="mt-20">
+          <div className="text-center mb-12">
+            <div className="inline-block relative">
+              <h3 className="text-3xl md:text-4xl font-black text-foreground transform rotate-1">
+                Meet Our Team
+              </h3>
+              <div className="absolute -bottom-2 left-0 w-full h-3 bg-accent/30 rotate-1" />
+            </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {mentors.map((mentor, index) => (
-              <Card 
-                key={index} 
-                className="text-center hover:rotate-0 transition-all border-4 border-foreground bg-card shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transform -rotate-1"
-              >
-                <div className="p-6">
-                  <div className={`w-24 h-24 rounded-full border-4 border-foreground mx-auto mb-4 flex items-center justify-center transform rotate-6 ${
-                    mentor.color === "primary" ? "bg-primary" : "bg-accent"
-                  }`}>
-                    <span className="text-3xl font-black text-foreground font-heading">
-                      {mentor.name.split(" ").map(n => n[0]).join("")}
-                    </span>
-                  </div>
-                  <h4 className="font-black text-lg mb-1 font-heading">{mentor.name}</h4>
-                  <p className="text-sm text-muted-foreground font-medium mb-4">
-                    {mentor.role}
-                  </p>
-                  <div className="flex flex-wrap gap-2 justify-center">
-                    {mentor.skills.map((skill, idx) => (
-                      <span
-                        key={idx}
-                        className="text-xs font-bold bg-primary text-primary-foreground px-3 py-1 border-2 border-foreground transform -rotate-2"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </Card>
-            ))}
+
+          <div className="flex justify-center">
+            <div className="bg-card border-4 border-foreground p-8 transform -rotate-2 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] max-w-sm">
+              <div className="w-32 h-32 bg-primary/20 border-4 border-foreground mx-auto mb-6 transform rotate-3" />
+              <h4 className="text-2xl font-bold text-foreground mb-2 text-center">Berand Gautam</h4>
+              <p className="text-primary font-semibold text-center mb-2">Organizer</p>
+              <p className="text-muted-foreground text-center">Leading Hack Day Butwal 1.0</p>
+            </div>
           </div>
         </div>
       </div>

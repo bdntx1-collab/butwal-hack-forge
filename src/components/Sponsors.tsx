@@ -13,78 +13,37 @@ const Sponsors = () => {
     <section id="sponsors" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Our Sponsors & Partners
-          </h2>
+          <div className="inline-block relative mb-6">
+            <h2 className="text-4xl md:text-5xl font-black text-foreground transform -rotate-1">
+              Our Sponsors & Partners
+            </h2>
+            <div className="absolute -bottom-3 left-0 w-full h-4 bg-primary/20 -rotate-1" />
+          </div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Partner with Hack Day Butwal 1.0 to support innovation and connect
             with Nepal's brightest student developers.
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto space-y-12">
-          {/* Platinum Sponsors */}
-          <div>
-            <h3 className="text-center text-xl font-bold text-primary mb-6">
-              Platinum Sponsors
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {sponsors.platinum.map((sponsor, index) => (
-                <Card
-                  key={index}
-                  className="p-8 flex items-center justify-center h-32 hover:shadow-lg transition-all"
-                >
-                  <span className="text-muted-foreground font-medium">
-                    {sponsor}
-                  </span>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          {/* Gold Sponsors */}
-          <div>
-            <h3 className="text-center text-xl font-bold text-primary mb-6">
-              Gold Sponsors
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-              {sponsors.gold.map((sponsor, index) => (
-                <Card
-                  key={index}
-                  className="p-6 flex items-center justify-center h-24 hover:shadow-lg transition-all"
-                >
-                  <span className="text-muted-foreground text-sm">
-                    {sponsor}
-                  </span>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          {/* Silver Sponsors */}
-          <div>
-            <h3 className="text-center text-xl font-bold text-primary mb-6">
-              Silver Sponsors
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {sponsors.silver.map((sponsor, index) => (
-                <Card
-                  key={index}
-                  className="p-4 flex items-center justify-center h-20 hover:shadow-lg transition-all"
-                >
-                  <span className="text-muted-foreground text-xs">
-                    {sponsor}
-                  </span>
-                </Card>
-              ))}
-            </div>
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+              <div
+                key={i}
+                className="bg-card border-4 border-foreground p-6 transform hover:-rotate-1 transition-all shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1"
+              >
+                <div className="aspect-square bg-muted flex items-center justify-center">
+                  <span className="text-muted-foreground font-bold">Sponsor {i}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
         <div className="text-center mt-12">
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg">Become a Sponsor</Button>
-            <Button size="lg" variant="outline">
+            <Button size="lg" className="transform -rotate-1 hover:rotate-0">Become a Sponsor</Button>
+            <Button size="lg" variant="outline" className="transform rotate-1 hover:rotate-0">
               <Download className="mr-2 w-4 h-4" />
               Download Sponsorship Deck (PDF)
             </Button>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/hack-day-logo.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,6 +23,15 @@ const Navbar = () => {
     { label: "FAQ", href: "#faq" },
   ];
 
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -30,8 +40,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <a href="#" className="text-2xl font-heading font-black text-primary transform hover:rotate-2 transition-transform">
-            HACK DAY 🚀
+          <a href="#" className="flex items-center gap-3 group">
+            <img src={logo} alt="Hack Day" className="h-12 w-auto transform group-hover:scale-105 transition-transform" />
           </a>
 
           {/* Desktop Navigation */}
@@ -40,6 +50,7 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
+                onClick={(e) => handleSmoothScroll(e, link.href)}
                 className="text-sm font-bold text-foreground hover:text-primary transition-colors uppercase tracking-wide hover:scale-105 transform"
               >
                 {link.label}
@@ -70,8 +81,8 @@ const Navbar = () => {
                 <a
                   key={link.href}
                   href={link.href}
+                  onClick={(e) => handleSmoothScroll(e, link.href)}
                   className="text-sm font-bold text-foreground hover:text-primary transition-colors uppercase tracking-wide py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
                 </a>
