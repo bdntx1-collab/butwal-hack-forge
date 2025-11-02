@@ -39,12 +39,12 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className={`flex items-center justify-between ${isScrolled ? 'h-24 md:h-28' : 'h-32 md:h-40'} transition-all duration-300`}>
+        <div className={`flex items-center justify-between ${isScrolled ? 'py-2' : 'py-4'} transition-all duration-300`}>
           <a href="#" className="flex items-center gap-3 group">
             <img 
               src={logo} 
               alt="Hack Day" 
-              className={`${isScrolled ? 'h-20 md:h-24' : 'h-36 md:h-44'} w-auto transform group-hover:scale-105 transition-all duration-300`}
+              className={`${isScrolled ? 'h-16 md:h-20' : 'h-28 md:h-36'} w-auto transform group-hover:scale-105 transition-all duration-300`}
             />
           </a>
 
