@@ -76,32 +76,24 @@ export default {
           from: { height: "var(--radix-accordion-content-height)", opacity: "1" },
           to: { height: "0", opacity: "0" },
         },
-        "fly-full-screen": {
-          "0%": {
-            transform: "translateX(0) translateY(0) rotate(-12deg)",
-          },
-          "25%": {
-            transform: "translateX(50vw) translateY(-20vh) rotate(-8deg)",
-          },
-          "50%": {
-            transform: "translateX(100vw) translateY(-10vh) rotate(-15deg)",
-          },
-          "75%": {
-            transform: "translateX(50vw) translateY(-30vh) rotate(-5deg)",
-          },
-          "100%": {
-            transform: "translateX(0) translateY(0) rotate(-12deg)",
-          },
-        },
         "fly-across": {
           "0%": {
-            transform: "translateX(0) translateY(0) rotate(-12deg) scale(1)",
-          },
-          "50%": {
-            transform: "translateX(110vw) translateY(-20vh) rotate(0deg) scale(1.3)",
+            transform: "translateX(0) rotate(-12deg)",
+            opacity: "0.8",
           },
           "100%": {
-            transform: "translateX(0) translateY(0) rotate(-12deg) scale(1)",
+            transform: "translateX(calc(100vw + 200px)) rotate(-5deg)",
+            opacity: "1",
+          },
+        },
+        "fly-up-celebration": {
+          "0%": {
+            transform: "translateY(0) rotate(-45deg) scale(1)",
+            opacity: "0.7",
+          },
+          "100%": {
+            transform: "translateY(-100vh) rotate(-30deg) scale(0.5)",
+            opacity: "0",
           },
         },
         "fade-in": {
@@ -148,6 +140,8 @@ export default {
         "wiggle": "wiggle 2s ease-in-out infinite",
         "slide-in-left": "slide-in-left 0.8s ease-out",
         "slide-in-right": "slide-in-right 0.8s ease-out",
+        "fly-across": "fly-across 3s ease-in-out forwards",
+        "fly-up-celebration": "fly-up-celebration 2s ease-out forwards",
       },
     },
   },
