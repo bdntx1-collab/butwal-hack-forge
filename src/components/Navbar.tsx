@@ -35,13 +35,17 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background border-b-4 border-foreground shadow-[0_4px_0px_0px_rgba(0,0,0,0.3)]" : "bg-transparent"
+        isScrolled ? "bg-background shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className={`flex items-center justify-between ${isScrolled ? 'h-24 md:h-28' : 'h-32 md:h-40'} transition-all duration-300`}>
           <a href="#" className="flex items-center gap-3 group">
-            <img src={logo} alt="Hack Day" className="h-32 md:h-40 w-auto transform group-hover:scale-105 transition-transform" />
+            <img 
+              src={logo} 
+              alt="Hack Day" 
+              className={`${isScrolled ? 'h-20 md:h-24' : 'h-36 md:h-44'} w-auto transform group-hover:scale-105 transition-all duration-300`}
+            />
           </a>
 
           {/* Desktop Navigation */}
@@ -75,7 +79,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t-4 border-foreground bg-background">
+          <div className="md:hidden py-4 bg-background shadow-lg">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a
