@@ -86,13 +86,101 @@ export default {
             opacity: "1",
           },
         },
-        "fly-up-celebration": {
+        "fly-north": {
           "0%": {
-            transform: "translateY(0) rotate(-45deg) scale(1)",
-            opacity: "0.7",
+            transform: "translate(-50%, 0) scale(0)",
+            opacity: "0",
+          },
+          "10%": {
+            transform: "translate(-50%, 0) scale(1)",
+            opacity: "0.6",
           },
           "100%": {
-            transform: "translateY(-100vh) rotate(-30deg) scale(0.5)",
+            transform: "translate(-50%, -150vh) scale(0.3)",
+            opacity: "0",
+          },
+        },
+        "fly-east": {
+          "0%": {
+            transform: "translate(-50%, 0) scale(0)",
+            opacity: "0",
+          },
+          "10%": {
+            transform: "translate(-50%, 0) scale(1)",
+            opacity: "0.6",
+          },
+          "100%": {
+            transform: "translate(150vw, 0) scale(0.3)",
+            opacity: "0",
+          },
+        },
+        "fly-west": {
+          "0%": {
+            transform: "translate(-50%, 0) scale(0)",
+            opacity: "0",
+          },
+          "10%": {
+            transform: "translate(-50%, 0) scale(1)",
+            opacity: "0.6",
+          },
+          "100%": {
+            transform: "translate(-150vw, 0) scale(0.3)",
+            opacity: "0",
+          },
+        },
+        "fly-northeast": {
+          "0%": {
+            transform: "translate(-50%, 0) scale(0)",
+            opacity: "0",
+          },
+          "10%": {
+            transform: "translate(-50%, 0) scale(1)",
+            opacity: "0.6",
+          },
+          "100%": {
+            transform: "translate(150vw, -150vh) scale(0.3)",
+            opacity: "0",
+          },
+        },
+        "fly-northwest": {
+          "0%": {
+            transform: "translate(-50%, 0) scale(0)",
+            opacity: "0",
+          },
+          "10%": {
+            transform: "translate(-50%, 0) scale(1)",
+            opacity: "0.6",
+          },
+          "100%": {
+            transform: "translate(-150vw, -150vh) scale(0.3)",
+            opacity: "0",
+          },
+        },
+        "fly-north-east-2": {
+          "0%": {
+            transform: "translate(-50%, 0) scale(0)",
+            opacity: "0",
+          },
+          "10%": {
+            transform: "translate(-50%, 0) scale(1)",
+            opacity: "0.6",
+          },
+          "100%": {
+            transform: "translate(100vw, -100vh) scale(0.3)",
+            opacity: "0",
+          },
+        },
+        "fly-north-west-2": {
+          "0%": {
+            transform: "translate(-50%, 0) scale(0)",
+            opacity: "0",
+          },
+          "10%": {
+            transform: "translate(-50%, 0) scale(1)",
+            opacity: "0.6",
+          },
+          "100%": {
+            transform: "translate(-100vw, -100vh) scale(0.3)",
             opacity: "0",
           },
         },
@@ -141,7 +229,13 @@ export default {
         "slide-in-left": "slide-in-left 0.8s ease-out",
         "slide-in-right": "slide-in-right 0.8s ease-out",
         "fly-across": "fly-across 3s ease-in-out forwards",
-        "fly-up-celebration": "fly-up-celebration 2s ease-out forwards",
+        "fly-north": "fly-north 2.5s ease-out forwards",
+        "fly-east": "fly-east 2.5s ease-out forwards",
+        "fly-west": "fly-west 2.5s ease-out forwards",
+        "fly-northeast": "fly-northeast 2.5s ease-out forwards",
+        "fly-northwest": "fly-northwest 2.5s ease-out forwards",
+        "fly-north-east-2": "fly-north-east-2 2.5s ease-out forwards",
+        "fly-north-west-2": "fly-north-west-2 2.5s ease-out forwards",
       },
     },
   },

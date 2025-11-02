@@ -41,7 +41,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <a href="#" className="flex items-center gap-3 group">
-            <img src={logo} alt="Hack Day" className="h-24 md:h-28 w-auto transform group-hover:scale-105 transition-transform" />
+            <img src={logo} alt="Hack Day" className="h-32 md:h-40 w-auto transform group-hover:scale-105 transition-transform" />
           </a>
 
           {/* Desktop Navigation */}

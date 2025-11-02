@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 const Hero = () => {
   const [showLogo, setShowLogo] = useState(false);
   const [showCelebration, setShowCelebration] = useState(false);
-  const [celebrationPlanes, setCelebrationPlanes] = useState<Array<{ id: number; x: number; delay: number }>>([]);
+  const [celebrationPlanes, setCelebrationPlanes] = useState<Array<{ id: number; direction: string; delay: number; rotation: number }>>([]);
 
   useEffect(() => {
     // Auto-fly plane animation
@@ -16,11 +16,13 @@ const Hero = () => {
 
     const timer2 = setTimeout(() => {
       setShowCelebration(true);
-      // Create 15 celebration planes with random positions
-      const planes = Array.from({ length: 15 }, (_, i) => ({
+      // Create 20 celebration planes flying in different directions (north, east, west, northeast, northwest)
+      const directions = ['north', 'east', 'west', 'northeast', 'northwest', 'north-east-2', 'north-west-2'];
+      const planes = Array.from({ length: 20 }, (_, i) => ({
         id: i,
-        x: Math.random() * 100 - 50, // Random x offset from center
-        delay: Math.random() * 0.5, // Random delay for staggered effect
+        direction: directions[Math.floor(Math.random() * directions.length)],
+        delay: Math.random() * 0.6, // Random delay for staggered effect
+        rotation: Math.random() * 90 - 45, // Random rotation between -45 and 45 degrees
       }));
       setCelebrationPlanes(planes);
     }, 3200); // Start celebration slightly after logo appears
@@ -62,18 +64,21 @@ const Hero = () => {
         <Plane className="w-24 h-24 md:w-32 md:h-32 text-primary opacity-80 -rotate-12" />
       </div>
 
-      {/* Celebration Planes - Fly upward when logo appears */}
+      {/* Celebration Planes - Fly in all directions when logo appears */}
       {showCelebration && celebrationPlanes.map((plane) => (
         <div
           key={plane.id}
-          className="fixed z-50 animate-[fly-up-celebration_2s_ease-out_forwards]"
+          className={`fixed z-50 animate-[fly-${plane.direction}_2.5s_ease-out_forwards]`}
           style={{
-            left: `calc(50% + ${plane.x}px)`,
+            left: '50%',
             top: '30%',
             animationDelay: `${plane.delay}s`,
           }}
         >
-          <Plane className="w-8 h-8 text-primary opacity-70 -rotate-45" />
+          <Plane 
+            className="w-6 h-6 text-primary opacity-60" 
+            style={{ transform: `rotate(${plane.rotation}deg)` }}
+          />
         </div>
       ))}
 
