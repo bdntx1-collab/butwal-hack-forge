@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Plane, Code2, Zap, Trophy } from "lucide-react";
-import logo from "@/assets/hack-day-logo.png";
+import logo from "@/assets/hack-day-logo-new.png";
 import { useState, useEffect } from "react";
 
 const Hero = () => {
@@ -65,22 +65,38 @@ const Hero = () => {
       </div>
 
       {/* Celebration Planes - Fly in all directions when logo appears */}
-      {showCelebration && celebrationPlanes.map((plane) => (
-        <div
-          key={plane.id}
-          className={`fixed z-50 animate-[fly-${plane.direction}_2.5s_ease-out_forwards]`}
-          style={{
-            left: '50%',
-            top: '30%',
-            animationDelay: `${plane.delay}s`,
-          }}
-        >
-          <Plane 
-            className="w-6 h-6 text-primary opacity-60" 
-            style={{ transform: `rotate(${plane.rotation}deg)` }}
-          />
-        </div>
-      ))}
+      {showCelebration && celebrationPlanes.map((plane) => {
+        const getAnimationName = () => {
+          switch(plane.direction) {
+            case 'north': return 'fly-north';
+            case 'east': return 'fly-east';
+            case 'west': return 'fly-west';
+            case 'northeast': return 'fly-northeast';
+            case 'northwest': return 'fly-northwest';
+            case 'north-east-2': return 'fly-north-east-2';
+            case 'north-west-2': return 'fly-north-west-2';
+            default: return 'fly-north';
+          }
+        };
+        
+        return (
+          <div
+            key={plane.id}
+            className="fixed z-50"
+            style={{
+              left: '50%',
+              top: '30%',
+              animation: `${getAnimationName()} 2.5s ease-out forwards`,
+              animationDelay: `${plane.delay}s`,
+            }}
+          >
+            <Plane 
+              className="w-6 h-6 text-primary opacity-60" 
+              style={{ transform: `rotate(${plane.rotation}deg)` }}
+            />
+          </div>
+        );
+      })}
 
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="text-center max-w-5xl mx-auto">
