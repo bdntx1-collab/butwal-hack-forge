@@ -140,8 +140,35 @@ const Hero = () => {
               size="lg"
               variant="outline"
               className="text-lg px-10 py-6 font-bold border-4 transform rotate-1 hover:rotate-0 transition-all border-foreground shadow-[6px_6px_0px_0px_hsl(var(--primary))] hover:shadow-[3px_3px_0px_0px_hsl(var(--primary))] hover:translate-x-1 hover:translate-y-1"
+              onClick={() => {
+                const event = {
+                  title: "Hack Day Butwal 1.0",
+                  description: "12-hour hackathon - Build, Learn, Win!",
+                  location: "Butwal, Nepal",
+                  startDate: "2025-11-15T09:00:00",
+                  endDate: "2025-11-15T21:00:00"
+                };
+                const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:${event.startDate.replace(/[-:]/g, '')}
+DTEND:${event.endDate.replace(/[-:]/g, '')}
+SUMMARY:${event.title}
+DESCRIPTION:${event.description}
+LOCATION:${event.location}
+END:VEVENT
+END:VCALENDAR`;
+                const blob = new Blob([icsContent], { type: 'text/calendar' });
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'hack-day-butwal.ics';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
             >
-              View Schedule
+              Add to Calendar
             </Button>
           </div>
 

@@ -37,12 +37,7 @@ const FAQ = () => {
     {
       question: "What should I bring?",
       answer:
-        "Bring your laptop, chargers, any hardware you want to use, and your student ID. Don't forget toiletries if you plan to stay overnight!",
-    },
-    {
-      question: "Where can I sleep?",
-      answer:
-        "We'll have a designated rest area with sleeping bags and yoga mats. Feel free to take power naps, but the venue will be open 24/7 for hacking!",
+        "Bring your laptop, chargers, any hardware you want to use, and your student ID. Come prepared for a full 12-hour innovation marathon!",
     },
     {
       question: "What if I have more questions?",
