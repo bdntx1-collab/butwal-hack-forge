@@ -2,11 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Plane, Code2, Zap, Trophy } from "lucide-react";
 import logo from "@/assets/hack-day-logo-new.png";
 import { useState, useEffect } from "react";
+import RegistrationForm from "./RegistrationForm";
 
 const Hero = () => {
   const [showLogo, setShowLogo] = useState(false);
   const [showCelebration, setShowCelebration] = useState(false);
   const [celebrationPlanes, setCelebrationPlanes] = useState<Array<{ id: number; direction: string; delay: number; rotation: number }>>([]);
+  const [showRegistration, setShowRegistration] = useState(false);
 
   useEffect(() => {
     // Auto-fly plane animation
@@ -133,6 +135,7 @@ const Hero = () => {
             <Button
               size="lg"
               className="text-lg px-10 py-6 font-bold transform -rotate-2 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1"
+              onClick={() => setShowRegistration(true)}
             >
               Register Now
             </Button>
@@ -196,6 +199,9 @@ END:VCALENDAR`;
       {/* Decorative Bottom Elements */}
       <div className="absolute bottom-10 right-10 w-32 h-32 border-4 border-primary/10 -rotate-12 hidden lg:block" />
       <div className="absolute bottom-20 left-20 w-24 h-24 bg-accent/5 rotate-45 hidden lg:block" />
+
+      {/* Registration Form */}
+      <RegistrationForm open={showRegistration} onOpenChange={setShowRegistration} />
     </section>
   );
 };

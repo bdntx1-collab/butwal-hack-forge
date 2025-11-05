@@ -1,4 +1,4 @@
-import { MessageCircle, Youtube, Linkedin, Github, Mail } from "lucide-react";
+import { MessageCircle, Instagram, Facebook, Github, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -59,22 +59,26 @@ const Footer = () => {
               </a>
               <div className="flex gap-3">
                 <a
+                  href="https://www.instagram.com/b.edant__fr_/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.facebook.com/bedant.gautam.7/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all"
+                >
+                  <Facebook className="w-5 h-5" />
+                </a>
+                <a
                   href="#"
                   className="w-10 h-10 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all"
                 >
                   <MessageCircle className="w-5 h-5" />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all"
-                >
-                  <Youtube className="w-5 h-5" />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all"
-                >
-                  <Linkedin className="w-5 h-5" />
                 </a>
                 <a
                   href="#"
