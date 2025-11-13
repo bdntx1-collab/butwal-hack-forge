@@ -1,11 +1,25 @@
-import { Shield, AlertTriangle, FileText, Mail } from "lucide-react";
+import { Shield, AlertTriangle, FileText, Mail, Download } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { generateCodeOfConductPDF } from "@/utils/generateCodeOfConductPDF";
+import { useToast } from "@/hooks/use-toast";
 
 const CodeOfConduct = () => {
-  const handleSmoothScroll = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+  const { toast } = useToast();
+
+  const handleDownloadPDF = () => {
+    try {
+      generateCodeOfConductPDF();
+      toast({
+        title: "PDF Downloaded",
+        description: "The Code of Conduct PDF has been downloaded successfully.",
+      });
+    } catch (error) {
+      toast({
+        title: "Download Failed",
+        description: "There was an error downloading the PDF. Please try again.",
+        variant: "destructive",
+      });
     }
   };
 
@@ -32,6 +46,14 @@ const CodeOfConduct = () => {
           <p className="text-sm text-muted-foreground mt-2">
             Organized by Butwal Hacks • Effective Date: November 13, 2025
           </p>
+          <Button 
+            onClick={handleDownloadPDF}
+            className="mt-6 bg-primary hover:bg-primary/90 text-primary-foreground font-bold"
+            size="lg"
+          >
+            <Download className="w-5 h-5 mr-2" />
+            Download PDF
+          </Button>
         </div>
 
         <div className="max-w-5xl mx-auto space-y-8">
