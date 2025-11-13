@@ -89,9 +89,15 @@ const FAQ = () => {
             size="lg" 
             variant="outline"
             className="transform rotate-1 hover:rotate-0"
+            onClick={() => {
+              const element = document.getElementById('code-of-conduct');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
           >
             <Download className="mr-2 w-5 h-5" />
-            Download Code of Conduct (PDF)
+            View Code of Conduct
           </Button>
         </div>
       </div>

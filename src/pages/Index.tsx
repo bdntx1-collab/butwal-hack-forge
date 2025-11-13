@@ -7,6 +7,7 @@ import Workshops from "@/components/Workshops";
 import Sponsors from "@/components/Sponsors";
 import Community from "@/components/Community";
 import FAQ from "@/components/FAQ";
+import CodeOfConduct from "@/components/CodeOfConduct";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
 
@@ -22,6 +23,7 @@ const Index = () => {
       <Sponsors />
       <Community />
       <FAQ />
+      <CodeOfConduct />
       <Footer />
       <Chatbot />
     </div>
